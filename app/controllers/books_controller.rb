@@ -1,5 +1,10 @@
 class BooksController < ApplicationController
-  def new
+
+  def create
+    @books = Book.all
+    @book = Book.new
+    @book.save
+    redirect_to book_path(@book.id)
   end
 
   def index
